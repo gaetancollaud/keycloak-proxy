@@ -1,0 +1,12 @@
+version: '3'
+services:
+  keycloak-proxy:
+    build: .
+    container_name: keycloak-proxy
+    image: gaetancollaud/keycloak-proxy
+    environment:
+      - "TARGET_URL=yourservice.com"
+      - "AUTH_SERVER_URL=keycloak.service.com"
+      - "REALM_NAME=master"
+      - "CLIENT_ID=myClient"
+      - "ROLE_ALLOWED=proxy"
